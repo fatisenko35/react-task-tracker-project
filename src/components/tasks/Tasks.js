@@ -10,9 +10,9 @@ const Tasks = ({task, deleteTask}) => {
     <div style= {{textAlign: 'left'}}>
         { task.map((item,i) => {
     
-    return ( <Task id={i} task={item} deleteTask = {deleteTask}/>
+    return ( <Task id={i} key={i} task={item} deleteTask = {deleteTask}/>
     )
-    })
+    }) 
  
   }
       

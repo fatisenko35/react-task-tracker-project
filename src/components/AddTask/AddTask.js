@@ -7,8 +7,8 @@ import "./AddTask.css"
 
 
 const AddTask = () => {
-    const [task, setTask] = useState({task :""});
-    const [day, setDay] = useState({day : ""});
+    const [task, setTask] = useState("");
+    const [day, setDay] = useState("");
  
     const [arry, setArry] = useState([]);
     const [show, setShow] = useState(true);
@@ -24,13 +24,13 @@ const AddTask = () => {
     const handleClick = (e) => {
         e.preventDefault();
         handleSubmit();
-        setTask({task :""});
-        setDay({day : ""});
+        setTask("");
+        setDay("");
     }
         
     const handleSubmit = (e) => {
         // e.preventDefault();
-        if (task.task=== "" || day.day === ""){
+        if (task === "" || day === ""){
             alert("input field can not be empty");
             return;
         }
@@ -61,14 +61,14 @@ const AddTask = () => {
         <Button show = {show} setShow = {setShow}/>
         {show ? (<form  >
             <label>Task</label>
-            <input type="text" placeholder="Add Task" onChange={handleTask} value={task.task}/>
+            <input type="text" placeholder="Add Task" onChange={handleTask} value={task}/>
             <label>Day & Time</label>
-            <input type="text" placeholder="Add Day & Time" onChange = {handleDay} value={day.day}/>
+            <input type="text" placeholder="Add Day & Time" onChange = {handleDay} value={day}/>
             <button onClick={handleClick}>Save Task</button>
             
         </form>) : ""}
       
-        {  !arry.length ?  (<span>No Tasks to Show</span>)
+        {  !arry.length ?  (<span >No Tasks to Show</span>)
         
         :   (<Tasks task = {arry} deleteTask = {deleteTask}/>  )}
         

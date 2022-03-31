@@ -14,8 +14,8 @@ const Task = ({task, deleteTask, id}) => {
     <div style={{fontFamily: ' "Helvetica Neue",Helvetica,Arial'}}>
       
         
-        <div className="mapContainer" onClick={handleDone} id={id} style={{borderLeft: done ? ('5px solid purple') : "none"}}>
-                    <h2> {done ?  (<del>{task.task}</del>):task.task }</h2>
+        <div className="mapContainer" onDoubleClick={handleDone} id={id} style={{borderLeft: done ? ('5px solid purple') : "none"}}>
+                    <h3> {done ?  (<del>{task.task}</del>):task.task }</h3>
                      <p>{done ? (<del>{task.day}</del>): task.day}</p>      
                      <MdCancel  onClick={() => deleteTask(id)} className="icon" />
                 </div>
